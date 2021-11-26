@@ -1,7 +1,6 @@
 from django.contrib import admin
+from .models import Equipement, Animal
 
 # Register your models here.
-from django.contrib import admin
-from .models import Billet
-
-admin.site.register(Billet)
+admin.site.register(Animal)
+admin.site.register(Equipement)

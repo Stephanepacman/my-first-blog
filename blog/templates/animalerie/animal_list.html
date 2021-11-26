@@ -1,0 +1,39 @@
+{% extends 'animalerie/base.html' %}
+{% load static %}
+                {% block content %}
+                <div class="wrapper">
+                <div>
+                <h2> Animaux </h2>
+                <div class="box">
+                    {% for animal in animaux%}
+                    <div  id="animal">
+                        <h2>{{ animal.id_animal }}</h2>
+                        <p><img src="{{ animal.photo }}" width="150" height="120"/></p>
+                        <p class="alignes">{{ animal.etat }}</p>
+                        <p class="alignes">{{ animal.lieu}}</p>
+                        <br>
+                        <p> <a id="lien" href="{% url 'animal_detail' id_animal=animal.id_animal %}">Plus de détails</a></p>
+
+                    </div>
+                    {% endfor %}
+                </div>
+                </div>
+                <div>
+                <h2> Equipements </h2>
+                <div class="box">
+                    {% for equipement in equipements %}
+                    <div id="equipement">
+                        <h2> {{ equipement.id_equip }}</h2>
+                        <p><img src="{{ equipement.photo }}" width="150" height="120"/></p>
+                        {% if  equipement.disponibilite  == 'libre' %}
+                            <div style="margin : 10px" ><p id="libre">Disponibilité : {{ equipement.disponibilite  }}</p></div>
+                        {% endif %}
+                        {% if  equipement.disponibilite  == 'occupé' %}
+                            <div style="margin : 10px" ><p id="occupé">Disponibilité : {{ equipement.disponibilite  }}</p></div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+                </div>
+                </div>
+                {% endblock content %}

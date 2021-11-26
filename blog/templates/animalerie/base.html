@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <title>L'animalerie</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog1.css' %}">
+
+    </head>
+    <body >
+        <div class="page-header">
+            <h1><a href="/">Bienvenue à l'animalerie</a></h1>
+        </div>
+
+        <div class="content container">
+                <div class="col-sm" >
+                {% block content %}
+                {% endblock content %}
+                </div>
+
+             </div>
+         </div>
+
+    </body>
+</html>
